@@ -11,4 +11,9 @@ export const OpenOrCloseAnimationText = styled.Text`
 export const BolderText = styled.Text`
  font-weight: bold;
 `;
+export const BottomBar = styled.View`
+ width: 100%;
+ padding: 1px;
+ background-color: black;
+`;
 

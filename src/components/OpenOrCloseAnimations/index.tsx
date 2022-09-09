@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { BolderText, ContainerAnimation, OpenOrCloseAnimationText } from './styles'
+import { BolderText, ContainerAnimation, OpenOrCloseAnimationText, BottomBar } from './styles'
 
 export const OpenOrCloseAnimations = ({ data }: any) => {
   const [openAnimation, setOpenAnimation] = useState(false)
@@ -29,6 +29,7 @@ export const OpenOrCloseAnimations = ({ data }: any) => {
           </OpenOrCloseAnimationText>
         </ContainerAnimation>
       )}
+      <BottomBar />
     </>
   )
 }

@@ -1,6 +1,6 @@
 import { ButtonSwitch, FlatListCreditCard, OpenOrCloseAnimations } from '@components'
 import React from 'react'
-
+import { ScrollView } from 'react-native'
 import { Container, Description, Title } from './styles'
 
 export function Home(): JSX.Element {
@@ -13,10 +13,12 @@ export function Home(): JSX.Element {
     <Container>
       <Title>Mobile Animations Project</Title>
       <Description>Click on a animation title to show in action.</Description>
-      {data &&
-        data.map((props, index) => {
-          return <OpenOrCloseAnimations key={index} data={props}></OpenOrCloseAnimations>
-        })}
+      <ScrollView>
+        {data &&
+          data.map((props, index) => {
+            return <OpenOrCloseAnimations key={index} data={props}></OpenOrCloseAnimations>
+          })}
+      </ScrollView>
     </Container>
   )
 }
