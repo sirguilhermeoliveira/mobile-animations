@@ -2,7 +2,14 @@ import React, { useState } from 'react'
 
 import { BolderText, ContainerAnimation, OpenOrCloseAnimationText, BottomBar } from './styles'
 
-export const OpenOrCloseAnimations = ({ data }: any) => {
+type dataProps = {
+  data: {
+    route: JSX.Element
+    title: string
+  }
+}
+
+export const OpenOrCloseAnimations = ({ data }: dataProps) => {
   const [openAnimation, setOpenAnimation] = useState(false)
   return (
     <>

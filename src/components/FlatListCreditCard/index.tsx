@@ -2,7 +2,7 @@ import { Cards } from './Cards'
 import React from 'react'
 import { CardsContainer } from './styles'
 
-type dataProp = {
+export type dataProp = {
   item: {
     id: number
     title: string
@@ -27,7 +27,7 @@ export const FlatListCreditCard = () => {
     <CardsContainer
       data={mockData}
       keyExtractor={(_: dataWithouItemProp): number => _.id}
-      renderItem={(item: dataProp): JSX.Element => <Cards data={item} />}
+      renderItem={(item: dataProp): JSX.Element => <Cards {...item} />}
     ></CardsContainer>
   )
 }

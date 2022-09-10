@@ -1,4 +1,4 @@
-import { ButtonSwitch, FlatListCreditCard, OpenOrCloseAnimations } from '@components'
+import { ButtonSwitch, FlatListCreditCard, OpenOrCloseAnimations } from '~/components'
 import React from 'react'
 import { ScrollView } from 'react-native'
 import { Container, Description, Title } from './styles'

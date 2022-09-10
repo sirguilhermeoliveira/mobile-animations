@@ -2,19 +2,12 @@ import React from 'react'
 
 import { Container, CardTitle } from './styles'
 
-type dataProp = {
-  data: {
-    item: {
-      id: number
-      title: string
-    }
-  }
-}
+import { dataProp } from '~/components/FlatListCreditCard'
 
 export const Cards = (data: dataProp) => {
   return (
     <Container>
-      <CardTitle>{data.data?.item?.title}</CardTitle>
+      <CardTitle>{data?.item?.title}</CardTitle>
     </Container>
   )
 }
