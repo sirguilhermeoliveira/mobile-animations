@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.ScrollView`
+export const Container = styled.View`
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 40px;

@@ -1,7 +1,7 @@
 import { ButtonSwitch, FlatListCreditCard, OpenOrCloseAnimations } from '~/components'
 import React from 'react'
-import { ScrollView } from 'react-native'
 import { Container, Description, Title } from './styles'
+import { ScrollView } from 'react-native'
 
 export function Home(): JSX.Element {
   const data = [
