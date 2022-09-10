@@ -1,11 +1,14 @@
 import { Cards } from './Cards'
 import React from 'react'
 import { CardsContainer } from './styles'
+import { Animated, FlatList } from 'react-native'
 
 export type dataProp = {
   item: {
-    id: number
-    title: string
+    item: {
+      id: number
+      title: string
+    }
   }
 }
 
@@ -15,6 +18,14 @@ type dataWithouItemProp = {
 }
 
 export const FlatListCreditCard = () => {
+  const AnimatedFlatList = Animated.createAnimatedComponent(FlatList)
+
+  const y = new Animated.Value(0)
+
+  const onScroll = Animated.event([{ nativeEvent: { contentOffset: { y } } }], {
+    useNativeDriver: true,
+  })
+
   const mockData: dataWithouItemProp[] = [
     { id: 1, title: 'Test Credit Card 1' },
     { id: 2, title: 'Test Credit Card 2' },
@@ -24,10 +35,15 @@ export const FlatListCreditCard = () => {
     { id: 6, title: 'Test Credit Card 3' },
   ]
   return (
-    <CardsContainer
-      data={mockData}
-      keyExtractor={(_: dataWithouItemProp): number => _.id}
-      renderItem={(item: dataProp): JSX.Element => <Cards {...item} />}
-    ></CardsContainer>
+    <CardsContainer>
+      <AnimatedFlatList
+        scrollEventThrottle={16} // ver do que se trata
+        bounces={false} // ver do que se trata
+        data={mockData}
+        keyExtractor={(_: any) => _.id}
+        renderItem={(item: any) => <Cards {...{ item, y }} />}
+        {...{ onScroll }}
+      />
+    </CardsContainer>
   )
 }
