@@ -46,8 +46,8 @@ export const FlatListCreditCard = () => {
       </AnimationObservationText>
       <AnimatedFlatList
         showsVerticalScrollIndicator={false}
-        scrollEventThrottle={16} // ver do que se trata
-        bounces={false} // ver do que se trata
+        scrollEventThrottle={16}
+        bounces={false}
         data={mockData}
         keyExtractor={(_: any) => _.id}
         renderItem={(item: any) => <Cards {...{ item, y }} />}
