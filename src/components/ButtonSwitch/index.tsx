@@ -1,39 +1,38 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import MaskedView from '@react-native-masked-view/masked-view'
-import { Container } from './styles'
+import { Container, IndividualButton } from './styles'
 
 export const ButtonSwitch = () => {
+  const mockData = [
+    { id: 1, title: 'Teste 1' },
+    { id: 2, title: 'Teste 2' },
+    { id: 3, title: 'Teste 3' },
+    { id: 4, title: 'Teste 4' },
+    { id: 5, title: 'Teste 5' },
+    { id: 6, title: 'Teste 6' },
+  ]
+
   return (
-    <MaskedView
-      style={{ flex: 1, flexDirection: 'row', height: '100%' }}
-      maskElement={
-        <View
-          style={{
-            // Transparent background because mask is based off alpha channel.
-            backgroundColor: 'transparent',
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 60,
-              color: 'black',
-              fontWeight: 'bold',
-            }}
-          >
-            Basic Mask
-          </Text>
-        </View>
-      }
-    >
-      {/* Shows behind the mask, you can put anything here, such as an image */}
-      <View style={{ flex: 1, height: '100%', backgroundColor: '#324376' }} />
-      <View style={{ flex: 1, height: '100%', backgroundColor: '#F5DD90' }} />
-      <View style={{ flex: 1, height: '100%', backgroundColor: '#F76C5E' }} />
-      <View style={{ flex: 1, height: '100%', backgroundColor: '#e1e1e1' }} />
-    </MaskedView>
+    <>
+      <MaskedView
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          height: '100%',
+          width: '100%',
+        }}
+        maskElement={
+          <Container>
+            {mockData &&
+              mockData.map((data) => (
+                <IndividualButton key={data.id}>{data.title}</IndividualButton>
+              ))}
+          </Container>
+        }
+      >
+        <View style={{ flex: 1, height: '100%', backgroundColor: '#324376' }} />
+      </MaskedView>
+    </>
   )
 }
